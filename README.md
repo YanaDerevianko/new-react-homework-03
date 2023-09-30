@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+Завдання 1: Створи компонент списку
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Створи компонент React, який називається List. У цьому компоненті передай масив елементів як властивість і відобрази кожен елемент як окремий HTML-елемент.
 
-## Available Scripts
+Завдання 2: Рендер динамічного списку
 
-In the project directory, you can run:
+У своєму основному файлі App.js створи масив об'єктів, які містять інформацію (наприклад, назву, опис) про різні елементи. Передай цей масив як властивість до компонента List і динамічно відобрази список елементів.
 
-### `npm start`
+Завдання 3: Управління станом
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+У файлі App.js імпортуй і використовуй хук useState. Створи змінну стану для управління списком елементів. Реалізуй функцію для додавання нових елементів до списку і переконайся, що компонент перерендерюється при зміні списку.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Завдання 4: Додай унікальні ключі
 
-### `npm test`
+У компоненті List, під час ітерації по масиву елементів, обов'язково додай унікальний ключ (ключ) кожному відображеному елементу. Поясни, чому це важливо в React.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Завдання 5: Умовне відображення
 
-### `npm run build`
+У компоненті Список впровадь умовне відображення. Якщо список порожній, відобрази повідомлення типу "Немає елементів для відображення". В іншому випадку відобрази список елементів.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Завдання 6: Переробка умовного відображення
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Оптимізуй умовне відображення в компоненті List, створивши змінну listContent. Ця змінна повинна містити JSX або список елементів або повідомлення "Немає елементів для відображення". Використовуй listContent у виразі повернення.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Завдання 7: Створи компонент фільтрації
 
-### `npm run eject`
+Створи новий компонент React, який називаєтьсяFilter. Передай до цього компонента функцію як властивість, яка буде фільтрувати список елементів на основі певних критеріїв (наприклад, категорія, дата).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Завдання 8: Перемикач форми
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+У окремому компоненті (наприклад, FormElement) впровадь умовне відображення. Спочатку відображай кнопку з написом "Додати новий елемент". При кліку на кнопку покажи форму для введення даних нового елемента. Після відправки форми або скасування вертайся до відображення кнопки.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Завдання 9: Управління режимом редагування
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+У компоненті FormElement створи змінні стану для відстеження режиму редагування (наприклад, редагується) та зберігай в них дані елемента під час редагування. Реалізуй функції для початку та завершення редагування.
 
-## Learn More
+Завдання 10: Закрий форму при відправці або скасуванні
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Розшир компонент FormElement, щоб включити кнопку "Скасувати". Реалізуй функцію для завершення редагування (встановлення редагується в false), коли кнопку "Скасувати" натиснуто. Крім того, коли форму відправляють, заверш редагування та обробляй логіку відправки даних.
