@@ -3,40 +3,34 @@ import { useState } from "react";
 import Filter from "../Filter/Filter";
 
 export const List = ({ items }) => {
-  const [selectedFilter, setSelectedFilter] = useState("none");
-  const [itemsForRender, setItemsForRender] = useState(items);
-  
+  const [selectedFilter, setSelectedFilter] = useState("none"); 
 
   const filterChangeHandler = (selectedAmount) => {
     setSelectedFilter(selectedAmount);
-
-    let filteredItemsList;
-    if (selectedAmount === "upTo20") {
-      filteredItemsList = items.filter((item) => item.amount < 20);
-    } else if (selectedAmount === "20To50") {
-      filteredItemsList = items.filter(
-        (item) => item.amount >= 20 && item.amount < 50
-      );
-    } else if (selectedAmount === "50To75") {
-      filteredItemsList = items.filter(
-        (item) => item.amount >= 50 && item.amount < 75
-      );
-    } else if (selectedAmount === "moreThan75") {
-      filteredItemsList = items.filter((item) => item.amount >= 75);
-    } else {
-      // no filter
-      filteredItemsList = items;
-    }
-
-    setItemsForRender(filteredItemsList);
   };
+
+  let filteredItemsList = items;
+
+  if (selectedFilter === "upTo20") {
+    filteredItemsList = items.filter((item) => item.amount < 20);
+  } else if (selectedFilter === "20To50") {
+    filteredItemsList = items.filter(
+      (item) => item.amount >= 20 && item.amount < 50
+    );
+  } else if (selectedFilter === "50To75") {
+    filteredItemsList = items.filter(
+      (item) => item.amount >= 50 && item.amount < 75
+    );
+  } else if (selectedFilter === "moreThan75") {
+    filteredItemsList = items.filter((item) => item.amount >= 75);
+  }
 
 let listContent;
 
-  if (itemsForRender.length > 0) {
+  if (filteredItemsList.length > 0) {
     listContent = (
       <ul>
-        {items.map((item) => (
+        {filteredItemsList.map((item) => (
           <li key={item.id}>
             <h2>{item.name}</h2>
             <p>Amount: {item.amount}</p>

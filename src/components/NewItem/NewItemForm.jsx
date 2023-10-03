@@ -5,6 +5,7 @@ const NewItemForm = (props) => {
   const [obtainedName, setObtainedName] = useState("");
   const [obtainedAmount, setObtainedAmount] = useState("");
   const [obtainedDescription, setObtainedDescription] = useState("");
+  const [error, setError] = useState("");
 
   const nameHandler = (e) => {
     setObtainedName(e.target.value);
@@ -21,6 +22,11 @@ const NewItemForm = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
 
+    if (!obtainedName || !obtainedAmount || !obtainedDescription) {
+      setError("Будь ласка, заповніть всі поля");
+      return; 
+    }
+
     const itemData = {
       name: obtainedName,
       amount: obtainedAmount,
@@ -31,10 +37,13 @@ const NewItemForm = (props) => {
     setObtainedName("");
     setObtainedAmount("");
     setObtainedDescription("");
+    setError("");
   };
 
   return (
+
     <form onSubmit={submitHandler}>
+      {error && <p style={{ color: "red" }}>{error}</p>}
       <label htmlFor="name">Name:</label>
       <input
         id="name"

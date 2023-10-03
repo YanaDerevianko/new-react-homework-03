@@ -1,7 +1,8 @@
 import "./App.css";
 import { List } from "./components/List/List";
 import { useState } from "react";
-import NewItem from "./components/NewItem/NewItem";
+// import NewItem from "./components/NewItem/NewItem";
+import {FormElement} from './components/FormElement/FormElement'
 
 const listItems = [
   {
@@ -45,9 +46,10 @@ function App() {
     });
   };
 
+
   return (
     <div className="App">
-      <NewItem onAddItem={addItemHandler}/>
+      <FormElement onAddItem={addItemHandler} />
       <List items={items} />
     </div>
   );
